@@ -1,0 +1,68 @@
+r1=.2;
+y1 = r1*realpow(sind(theta),3);
+a = realpow(r1,2)*realpow((y1./r1),4/3);
+b = realpow(y1,2);
+x1 = realpow(a-b,1/2);
+x1(92:180) = x1(92:180).*-1;
+
+r1=.4;
+y2 = r1*realpow(sind(theta),3);
+a = realpow(r1,2)*realpow((y2./r1),4/3);
+b = realpow(y2,2);
+x2 = realpow(a-b,1/2);
+x2(92:180) = x2(92:180).*-1;
+
+r1=.6;
+y3 = r1*realpow(sind(theta),3);
+a = realpow(r1,2)*realpow((y3./r1),4/3);
+b = realpow(y3,2);
+x3 = realpow(a-b,1/2);
+x3(92:180) = x3(92:180).*-1;
+
+r1=.8;
+y4 = r1*realpow(sind(theta),3);
+a = realpow(r1,2)*realpow((y4./r1),4/3);
+b = realpow(y4,2);
+x4 = realpow(a-b,1/2);
+x4(92:180) = x4(92:180).*-1;
+
+r1=1;
+y5 = r1*realpow(sind(theta),3);
+a = realpow(r1,2)*realpow((y5./r1),4/3);
+b = realpow(y5,2);
+x5 = realpow(a-b,1/2);
+x5(92:180) = x5(92:180).*-1;
+
+
+
+
+
+
+r1=.2;
+r = r1*realpow(sind(theta),2);
+y1 = r1*realpow(sind(theta),3);
+x1 = r1*realpow(sind(theta),2).*cosd(theta);
+
+r1=.4;
+y2 = r1*realpow(sind(theta),3);
+x2 = r1*realpow(sind(theta),2).*cosd(theta);
+
+r1=.6;
+y3 = r1*realpow(sind(theta),3);
+x3 = r1*realpow(sind(theta),2).*cosd(theta);
+
+r1=.8;
+y4 = r1*realpow(sind(theta),3);
+x4 = r1*realpow(sind(theta),2).*cosd(theta);
+
+r1=1;
+y5 = r1*realpow(sind(theta),3);
+x5 = r1*realpow(sind(theta),2).*cosd(theta);
+
+
+
+
+r1=.2;
+r = r1*realpow(sin(theta),2);
+y = r1*realpow(sin(theta),3);
+x = r1*realpow(sin(theta),2).*cos(theta);
