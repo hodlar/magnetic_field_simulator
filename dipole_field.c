@@ -32,6 +32,7 @@ int main()
 {
 	double theta, r, x, y, r1, Br, Bt, Bx, By, B, orientation, m;
 	r1 = .2;
+	m = 1;
 	//Calculate magnetic dipole field lines
 	for(theta = 0; theta <= HALF_PI; theta += THETA_STEP)
 	{
@@ -41,6 +42,7 @@ int main()
 		//printf("theta = %f\nr = %f\nX = %f\nY = %f\n\n",theta,r,x,y);
 	}
 
+	r = 1.2;
 	//Calculate magnetic field vectors
 	for(theta = .9; theta <= 2.4; theta += THETA_STEP)
 	{
@@ -50,7 +52,9 @@ int main()
 		By = Br * sin(theta) + Bt * cos(theta);
 		B = sqrt(pow(Bx,2) + pow(By,2));
 		orientation = atan2(By,Bx);
-		printf("B = %f\n orientation = %f \n\n",B,orientation);
+		printf("theta = %f Br = %f Bt = %f      ",theta,Br,Bt);
+		printf("Bx = %d   By = %d \n",Bx,By);
+		printf("B = %f    orientation = %f \n\n",B,orientation);
 	}
 	return 0;
 }
