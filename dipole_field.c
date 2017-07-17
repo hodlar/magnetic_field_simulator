@@ -50,10 +50,11 @@ int main()
 		Bt = (m * sin(theta)) / pow(r,3);
 		Bx = Br * cos(theta) - Bt * sin(theta);
 		By = Br * sin(theta) + Bt * cos(theta);
+		printf("By = %f\n", By);
 		B = sqrt(pow(Bx,2) + pow(By,2));
 		orientation = atan2(By,Bx);
-		printf("theta = %f Br = %f Bt = %f      ",theta,Br,Bt);
-		printf("Bx = %d   By = %d \n",Bx,By);
+		//printf("theta = %f Br = %f Bt = %f      ",theta,Br,Bt);
+		//printf("theta = %f   Bx = %f   By = %f \n",theta,Bx,By);
 		printf("B = %f    orientation = %f \n\n",B,orientation);
 	}
 	return 0;
