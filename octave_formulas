@@ -28,6 +28,16 @@ By = Br.*sind(theta) .+ Bt.*cosd(theta);
 plot(By,Bx)
 
 
+r = 1;
+m = 1;
+Br = 2*m*cosd(theta)/realpow(r,3);
+Bt = m*sind(theta)/realpow(r,3);
+Bx = Br.*cosd(theta) - Bt.*sind(theta);
+By = Br.*sind(theta) + Bt.*cosd(theta);
+B = realpow(realpow(Bx,2)+realpow(By,2),1/2);
+orientation = atan2d(By,Bx);
+
+
 
 r1=.2;
 r = r1*realpow(sin(theta),2);
@@ -35,8 +45,33 @@ y = r1*realpow(sin(theta),3);
 x = r1*realpow(sin(theta),2).*cos(theta);
 
 
-
+theta = 0:.3:3.14;
+r = 1.2;
+m = 1;
 Br = 2*m*cos(theta)/realpow(r,3);
 Bt = m*sin(theta)/realpow(r,3);
-Bx = Br*cos(theta) - Bt*sin(theta);
-By = Br*sin(theta) + Bt*cos(theta);
+Bx = Br.*cos(theta) - Bt.*sin(theta);
+By = Br.*sin(theta) + Bt.*cos(theta);
+B = realpow(realpow(Bx,2)+realpow(By,2),1/2);
+orientation = atan2(By,Bx);
+
+
+
+
+
+
+
+
+
+
+
+
+
+r = 1;
+m = 1;
+Br = 2*m*cosd(theta)/realpow(r,3);
+Bt = m*sind(theta)/realpow(r,3);
+Bx = Br.*cosd(theta) - Bt.*sind(theta);
+By = Br.*sind(theta) + Bt.*cosd(theta);
+B = realpow(realpow(Bx,2)+realpow(By,2),1/2);
+orientation = atan2d(By,Bx);
