@@ -30,8 +30,8 @@ void polar_to_cartesian(double theta, double r, double *xptr, double *yptr)
 
 int main()
 {
-	double theta, r, x, y, r1, Br, Bt, Bx, By, B, orientation, m;
-	r1 = .2;
+	double theta, r, x, y, r1, Br, Bt, Bx, By, B, orientation, m, field_limit;
+	r1 = 1;
 	m = 1;
 	//Calculate magnetic dipole field lines
 	for(theta = 0; theta <= HALF_PI; theta += THETA_STEP)
@@ -42,20 +42,20 @@ int main()
 		//printf("theta = %f\nr = %f\nX = %f\nY = %f\n\n",theta,r,x,y);
 	}
 
-	r = 1.2;
 	//Calculate magnetic field vectors
-	for(theta = .9; theta <= 2.4; theta += THETA_STEP)
+	for(field_limit = THETA_STEP; r1*sin(field_limit) < .7 && field_limit < HALF_PI; field_limit += THETA_STEP){}
+	for(theta = field_limit; theta < HALF_PI - field_limit; theta+= THETA_STEP)
 	{
-		Br = (2 * m * cos(theta)) / pow(r,3);
-		Bt = (m * sin(theta)) / pow(r,3);
+		Br = (2 * m * cos(theta)) / pow(r1,3);
+		Bt = (m * sin(theta)) / pow(r1,3);
 		Bx = Br * cos(theta) - Bt * sin(theta);
 		By = Br * sin(theta) + Bt * cos(theta);
-		printf("By = %f\n", By);
 		B = sqrt(pow(Bx,2) + pow(By,2));
 		orientation = atan2(By,Bx);
 		//printf("theta = %f Br = %f Bt = %f      ",theta,Br,Bt);
 		//printf("theta = %f   Bx = %f   By = %f \n",theta,Bx,By);
 		printf("B = %f    orientation = %f \n\n",B,orientation);
 	}
+
 	return 0;
 }
